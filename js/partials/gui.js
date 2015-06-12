@@ -27,7 +27,7 @@ function initGui() {
 	gui_display.open();
 	gui_settings.open();
 
-	gui_settings.__controllers.forEach( function ( controller ) {
+	gui_settings.__controllers.forEach( ( controller ) => {
 		controller.onChange( updateSettings );
 	} );
 
@@ -43,7 +43,7 @@ function updateSettings() {
 
 function updateGuiDisplay() {
 
-	gui_display.__controllers.forEach( function ( controller ) {
+	gui_display.__controllers.forEach( ( controller ) => {
 		controller.updateDisplay();
 	} );
 

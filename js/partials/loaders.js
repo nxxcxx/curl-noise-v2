@@ -1,13 +1,13 @@
 'use strict';
 var loadingManager = new THREE.LoadingManager();
-loadingManager.onLoad = function () {
+loadingManager.onLoad = () => {
 
 	main();
 	run();
 
 };
 
-loadingManager.onProgress = function ( item, loaded, total ) {
+loadingManager.onProgress = ( item, loaded, total ) => {
 
 	console.log( loaded + '/' + total, item );
 
@@ -18,11 +18,11 @@ var shaderLoader = new THREE.XHRLoader( loadingManager );
 shaderLoader.setResponseType( 'text' );
 shaderLoader.showStatus = true;
 
-shaderLoader.loadShaders = function ( SHADERS, urlObj ) {
+shaderLoader.loadShaders = ( SHADERS, urlObj ) => {
 
-	Object.keys( urlObj ).forEach( function ( key ) {
+	Object.keys( urlObj ).forEach( ( key ) => {
 
-		shaderLoader.load( urlObj[ key ], function ( shader ) {
+		shaderLoader.load( urlObj[ key ], ( shader ) => {
 
 			SHADERS[ key ] = shader;
 
@@ -56,8 +56,6 @@ shaderLoader.loadShaders( SHADERS, {
 
 var TEXTURES = {};
 var textureLoader = new THREE.TextureLoader( loadingManager );
-textureLoader.load( 'sprites/electricScaled.png', function ( tex ) {
-
+textureLoader.load( 'sprites/electricScaled.png', ( tex ) => {
 	TEXTURES.electric = tex;
-
 } );

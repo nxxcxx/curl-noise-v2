@@ -1,6 +1,6 @@
 'use strict';
 
-window.addEventListener( 'keypress', function ( event ) {
+window.addEventListener( 'keypress', ( event ) => {
 
 	var key = event.keyCode;
 
@@ -22,20 +22,7 @@ window.addEventListener( 'keypress', function ( event ) {
 } );
 
 
-( function () {
-
-	var timerID;
-	window.addEventListener( 'resize', function () {
-
-		clearTimeout( timerID );
-		timerID = setTimeout( function () {
-			onWindowResize();
-		}, 100 );
-
-	} );
-
-} )();
-
+window.addEventListener( 'resize', debounce( onWindowResize, 200 ) );
 
 function onWindowResize() {
 
