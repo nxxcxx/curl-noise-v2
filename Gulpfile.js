@@ -18,7 +18,7 @@ gulp.task( 'build:partials', function () {
 		.pipe( $.if( config.uglify, $.uglify() ) )
 		.pipe( $.wrap( '//source: <%= file.relative %>\n<%= contents %>' ) )
 		.pipe( $.remember( 'partials' ) )
-		.pipe( $.debug( { title: 'partials:remenber' } ) )
+		.pipe( $.debug( { title: 'partials:remembered' } ) )
 		.pipe( $.concatUtil( 'app.min.js', { process: removeUseStrict } ) )
 		.pipe( $.concatUtil.header('"use strict"\n') )
 		.pipe( $.sourcemaps.write( '.' ) )

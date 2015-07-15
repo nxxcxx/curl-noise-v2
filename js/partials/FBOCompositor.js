@@ -59,7 +59,7 @@ FBOCompositor.prototype = {
 	},
 
 	getPass: function ( name ) {
-		/* todo: update to ECMA6 Array.find() */
+		/* todo: update to ES6 Array.find() */
 		var pass = null;
 		this.passes.some( function ( currPass ) {
 
@@ -238,7 +238,7 @@ FBOPass.prototype = {
 			format: THREE.RGBAFormat,
 			type: THREE.FloatType,
 			stencilBuffer: false,
-			depthBuffer: false,
+			depthBuffer: false
 
 		} );
 
